@@ -32,7 +32,7 @@ class NoteOutput(BaseModel):
     summary: str
     tags: List[str]
 
-# 
+# Fast api runs a GET request to the root URL of the API
 @app.get("/")
 async def root():
     return {"message": "Welcome to the AI-Powered Personal Notes Assistant API!"}
