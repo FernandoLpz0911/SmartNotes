@@ -1,8 +1,6 @@
-import { useState } from 'react'
-import './App.css'
+import './cssfiles/App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function Home() {
 
   return (
     <>
@@ -10,10 +8,13 @@ function App() {
         <button className="option"> Notes </button>
         <button className="option"> Tags </button>
       </div>
+      <div>
+        <button className="newnote" > + Create New Note</button>
+      </div>
       
       
     </>
   )
 }
 
-export default App
+export default Home
