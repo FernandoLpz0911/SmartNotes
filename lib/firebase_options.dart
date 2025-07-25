@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'smart-notes-backend-aba3e.firebasestorage.app',
     measurementId: 'G-94B25PGG4V',
   );
+
 }
