@@ -17,12 +17,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      //title: 'Smart Notes',
+    return MaterialApp( 
       theme: ThemeData(
-       
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+        brightness: Brightness.dark,
+      ),     
       home: const WidgetTree(),
     );
   }
