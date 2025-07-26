@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:smart_notes/widget_tree.dart';
 import 'firebase_options.dart'; // flutterfire configuration
 
-
-void main() async{
+Future<void> main() async{
     WidgetsFlutterBinding.ensureInitialized(); //firebase initialization
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Smart Notes',
+      //title: 'Smart Notes',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Welcome to Smart Notes!'),
+      home: const WidgetTree(),
     );
   }
 }

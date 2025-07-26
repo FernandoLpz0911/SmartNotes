@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Match the 'notes' collection
+    match /notes/{noteId} {
+      // Allow read access if the user is authenticated AND
+      // the 'userId' field in the note document matches the authenticated user's UID.
+      allow read: if request.auth != null && request.auth.uid == resource.data.userId;
+
+      // Allow create (write) access if the user is authenticated.
+      // The 'userId' field should be set by the client on creation.
+      allow create: if request.auth != null;
+
+      // Allow update/delete access if the user is authenticated AND
+      // the 'userId' field in the note document matches the authenticated user's UID.
+      allow update, delete: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+
+    // IMPORTANT: By default, all other collections/documents are DENIED.
+  }
+}
