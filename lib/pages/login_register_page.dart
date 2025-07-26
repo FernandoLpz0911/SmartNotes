@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _errorMessage() {
-    return Text(errorMessage == '' ? '' : 'Humm? $errorMessage');
+    return Text(errorMessage == '' ? '' : 'Error!! $errorMessage');
   }
 
   Widget _submitButton() {
@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
           isLogin = !isLogin;
         });
       },
-      child: Text(isLogin ? 'Register instead' : 'Login instead'),
+      child: Text(isLogin ? 'Register' : 'Login'),
     );
   }
 
